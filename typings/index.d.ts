@@ -1,0 +1,1 @@
+/// <reference path="three-vrcontrols-module/index.d.ts" />
