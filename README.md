@@ -8,7 +8,7 @@ You only need <b>node.js</b> pre-installed and you’re good to go.
 ## Download
 Clone repo 
 ```sh
-$ git clone git@github.com:beam-development/three_ts_boilerplate.git
+$ git clone git@github.com:robsouthgate4/shader_galaxy.git
 ```
 
 ## Setup
