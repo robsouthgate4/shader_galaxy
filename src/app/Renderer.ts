@@ -69,7 +69,7 @@ export default class Renderer{
     }
 
     zoomToPos(target: THREE.Vector3): void{
-        TweenMax.to(this.camera.position, 12.0, {
+        TweenMax.to(this.camera.position, 10.0, {
             x: target.x,
             y: target.y,
             z: target.z,
@@ -83,89 +83,88 @@ export default class Renderer{
 
     start() {
 
-            this.renderer = new THREE.WebGLRenderer({
-                canvas: this.canvas,
-                alpha: true,
-                preserveDrawingBuffer: true
-            })
+        this.renderer = new THREE.WebGLRenderer({
+            canvas: this.canvas,
+            alpha: true,
+            preserveDrawingBuffer: true
+        })
 
-            this.scene = new THREE.Scene()
-            this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 35000 )
+        this.scene = new THREE.Scene()
+        this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 35000 )
 
-            this.renderer.setSize( window.innerWidth, window.innerHeight );
-            this.renderer.setPixelRatio(2);
+        this.renderer.setSize( window.innerWidth, window.innerHeight );
+        this.renderer.setPixelRatio(2);
 
-            document.body.appendChild( this.renderer.domElement )
+        document.body.appendChild( this.renderer.domElement )
 
-            const position = { x : 0, y: 0, z: 20 }
+        const position = { x : 0, y: 0, z: 1000 }
 
-            this.camera.position.copy(
-                new THREE.Vector3(
-                    position.x,
-                    position.y,
-                    position.z
-                )
+        this.camera.position.copy(
+            new THREE.Vector3(
+                position.x,
+                position.y,
+                position.z
             )
+        )
 
-            //this.zoomToPos(new THREE.Vector3(0,  0, 20))
-
-
-            // this.scene.background = new THREE.CubeTextureLoader().load([
-            //     posX,
-            //     negX,
-            //     posY,
-            //     negY,
-            //     posZ,
-            //     negZ
-            // ]);
-
-            const gpuParticleSystem =  new GpuParticles(20000)
+       this.zoomToPos(new THREE.Vector3(0,  0, 25))
 
 
-            const particlesMesh = new THREE.Mesh(
-                gpuParticleSystem.particleGeometry,
-                gpuParticleSystem.particleMaterial
-            )
+        // this.scene.background = new THREE.CubeTextureLoader().load([
+        //     posX,
+        //     negX,
+        //     posY,
+        //     negY,
+        //     posZ,
+        //     negZ
+        // ]);
 
-            particlesMesh.scale.set( 50, 50, 50 )
+        const gpuParticleSystem =  new GpuParticles(100000, 5000)
+        const particleField = gpuParticleSystem.particlePoints;
+        this.scene.add(particleField);
 
-            this.scene.add(particlesMesh);
+        // const gpuParticleSystem2 =  new GpuParticles(20000, 1000)
+        // const particleField2 = gpuParticleSystem2.particlePoints;
+        // this.scene.add(particleField2);
 
-            /*
+
+        /*
            Add scene lights
-            */
-            this.light = new THREE.PointLight( new THREE.Color('#ffffff'), 1, 100);
-            this.light.position.set( 0, 0, 0 );+
-            this.scene.add( this.light );
+        */
 
-            this.light2 = new THREE.PointLight( new THREE.Color('#ffffff'), 1, 100);
-            this.light2.position.set( -20, 0, 0 );
-            this.scene.add( this.light2 );
+        this.light = new THREE.PointLight( new THREE.Color('#ffffff'), 1, 100);
+        this.light.position.set( 0, 0, 0 );+
+        this.scene.add( this.light );
 
-
-            /* Create Nebula  */
-
-            this.nerbMaterial = ExampleMaterial.createMaterial();
-            this.nerbGroup = Geometries.CreateNebulaGeometry(10, 70, 50);
-            this.nerbGroup.scale.set(0.5, 0.5, 0.5)
+        this.light2 = new THREE.PointLight( new THREE.Color('#ffffff'), 1, 100);
+        this.light2.position.set( -20, 0, 0 );
+        this.scene.add( this.light2 );
 
 
-            this.nerbGroup.traverse((item) => {
-                if (item instanceof THREE.Mesh) {
-                    item.material = this.nerbMaterial
-                }
-            })
+        /* Create Nebula  */
 
-            this.scene.add(this.nerbGroup)
+        this.nerbMaterial = ExampleMaterial.createMaterial();
+        this.nerbGroup = Geometries.CreateNebulaGeometry(10, 90, 60);
+        this.nerbGroup.scale.set(0.5, 0.5, 0.5)
 
-
-            this.draw()
-
-            if (this.props.orbitControls) {
-                this.controls = new OrbitControls( this.camera )
-            } else {
-                this.controls = null;
+        this.nerbGroup.traverse((item) => {
+            if (item instanceof THREE.Mesh) {
+                item.material = this.nerbMaterial
             }
+        })
+
+        
+        this.scene.add(this.nerbGroup);
+        
+
+
+        this.draw()
+
+        if (this.props.orbitControls) {
+            this.controls = new OrbitControls( this.camera )
+        } else {
+            this.controls = null;
+        }
 
     }
 
