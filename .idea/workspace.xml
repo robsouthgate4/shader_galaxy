@@ -7,8 +7,8 @@
       <change beforePath="$PROJECT_DIR$/src/app/low_level/GpuParticles.ts" afterPath="$PROJECT_DIR$/src/app/low_level/GpuParticles.ts" />
       <change beforePath="$PROJECT_DIR$/src/app/shaders/particle.frag.glsl" afterPath="$PROJECT_DIR$/src/app/shaders/particle.frag.glsl" />
       <change beforePath="$PROJECT_DIR$/src/app/shaders/particle.vert.glsl" afterPath="$PROJECT_DIR$/src/app/shaders/particle.vert.glsl" />
-      <change beforePath="$PROJECT_DIR$/src/app/shaders/test.frag.glsl" afterPath="$PROJECT_DIR$/src/app/shaders/test.frag.glsl" />
       <change beforePath="$PROJECT_DIR$/typings/index.d.ts" afterPath="$PROJECT_DIR$/typings/index.d.ts" />
+      <change beforePath="$PROJECT_DIR$/webpack/dev.config.js" afterPath="$PROJECT_DIR$/webpack/dev.config.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,18 +22,8 @@
       <file leaf-file-name="GpuParticles.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/low_level/GpuParticles.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="44" column="50" lean-forward="true" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="particle.vert.glsl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/shaders/particle.vert.glsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="23">
+              <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -42,18 +32,28 @@
       <file leaf-file-name="particle.frag.glsl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/shaders/particle.frag.glsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+            <state relative-caret-position="129">
+              <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Renderer.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="particle.vert.glsl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shaders/particle.vert.glsl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Renderer.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/Renderer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="119" column="20" lean-forward="true" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+            <state relative-caret-position="257">
+              <caret line="195" column="34" lean-forward="false" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
               <folding>
                 <element signature="e#123#180#0" expanded="true" />
                 <element signature="e#269#306#0" expanded="true" />
@@ -62,23 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typings/index.d.ts">
+      <file leaf-file-name="dev.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack/dev.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="45" lean-forward="true" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typings/three-vrcontrols-module/index.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="460">
+              <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -97,16 +85,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cnoise3</find>
-      <find>n3</find>
-      <find>cnoise</find>
       <find>inline</find>
       <find>materi</find>
       <find>webpac</find>
       <find>server</find>
       <find>orbit</find>
       <find>OBJLo</find>
-      <find>camera</find>
       <find>textGe</find>
       <find>conso</find>
       <find>webpack</find>
@@ -123,8 +107,14 @@
       <find>rot</find>
       <find>Lens</find>
       <find>LensFl</find>
-      <find>zoom</find>
+      <find>this.came</find>
       <find>lens</find>
+      <find>upda</find>
+      <find>zoom</find>
+      <find>this.cam</find>
+      <find>camera</find>
+      <find>this.camer</find>
+      <find>update</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,17 +163,17 @@
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/shaders/test.vert.glsl" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/webpack/dev.config.js" />
         <option value="$PROJECT_DIR$/src/app/shaders/test.frag.glsl" />
         <option value="$PROJECT_DIR$/src/three_extensions/LensFlare.js.ts" />
         <option value="$PROJECT_DIR$/src/three_extensions/LensFlare.js" />
-        <option value="$PROJECT_DIR$/typings/index.d.ts" />
         <option value="$PROJECT_DIR$/src/three_extensions/Lensflare.js" />
         <option value="$PROJECT_DIR$/typings/Lensflare/index.d.ts" />
+        <option value="$PROJECT_DIR$/typings/index.d.ts" />
         <option value="$PROJECT_DIR$/src/app/low_level/GpuParticles.ts" />
+        <option value="$PROJECT_DIR$/webpack/dev.config.js" />
+        <option value="$PROJECT_DIR$/src/app/shaders/particle.vert.glsl" />
         <option value="$PROJECT_DIR$/src/app/shaders/particle.frag.glsl" />
         <option value="$PROJECT_DIR$/src/app/Renderer.ts" />
-        <option value="$PROJECT_DIR$/src/app/shaders/particle.vert.glsl" />
       </list>
     </option>
   </component>
@@ -198,8 +188,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="153" />
-    <option name="y" value="68" />
+    <option name="x" value="109" />
+    <option name="y" value="54" />
     <option name="width" value="1695" />
     <option name="height" value="996" />
   </component>
@@ -235,6 +225,12 @@
             <path>
               <item name="shader_galaxy" type="b2602c69:ProjectViewProjectNode" />
               <item name="shader_galaxy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shader_galaxy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shader_galaxy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="typings" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -253,7 +249,7 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.standard" value="$PROJECT_DIR$/node_modules/eslint" />
-    <property name="SearchEverywhereHistoryKey" value="@type&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/node_modules/@types&#10;webp&#9;null&#9;null&#10;pac&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/package.json&#10;vert&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/app/shaders/test.vert.glsl&#10;.scss&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/style/app.scss&#10;exampl&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/app/materials/ExampleMaterial.ts&#10;exam&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/app/materials/ExampleMaterial.ts&#10;rend&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/app/Renderer.ts&#10;render&#9;null&#9;null&#10;ify&#9;FILE&#9;file:///Users/southgater/Documents/projects/three_ts_boilerplate/node_modules/ify-loader&#10;@types&#9;FILE&#9;file:///Users/southgater/Documents/projects/edge_vr/node_modules/@types&#10;.d.ts&#9;FILE&#9;file:///Users/southgater/Documents/projects/edge_vr/node_modules/@types/gsap/Animation.d.ts&#10;mater&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="dev.c&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/webpack/dev.config.js&#10;render&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/app/Renderer.ts&#10;shaders&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/app/shaders&#10;@type&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/node_modules/@types&#10;webp&#9;null&#9;null&#10;pac&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/package.json&#10;vert&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/app/shaders/test.vert.glsl&#10;.scss&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/style/app.scss&#10;exampl&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/app/materials/ExampleMaterial.ts&#10;exam&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/app/materials/ExampleMaterial.ts&#10;rend&#9;FILE&#9;file:///Users/southgater/Documents/projects/shader_galaxy/src/app/Renderer.ts&#10;ify&#9;FILE&#9;file:///Users/southgater/Documents/projects/three_ts_boilerplate/node_modules/ify-loader&#10;@types&#9;FILE&#9;file:///Users/southgater/Documents/projects/edge_vr/node_modules/@types&#10;.d.ts&#9;FILE&#9;file:///Users/southgater/Documents/projects/edge_vr/node_modules/@types/gsap/Animation.d.ts&#10;mater&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -302,15 +298,15 @@
       <workItem from="1523279483310" duration="282000" />
       <workItem from="1523280571298" duration="98000" />
       <workItem from="1523280862093" duration="330000" />
-      <workItem from="1523281608057" duration="6584000" />
+      <workItem from="1523281608057" duration="10817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110574000" />
+    <option name="totallyTimeSpent" value="114807000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="153" y="68" width="1695" height="996" extended-state="0" />
+    <frame x="109" y="54" width="1695" height="996" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -593,14 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack/dev.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="17" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shaders/test.frag.glsl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
@@ -665,24 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/typings/three-vrcontrols-module/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typings/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="45" lean-forward="true" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/three_extensions/Lensflare.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -699,38 +669,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/typings/three-vrcontrols-module/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="51" lean-forward="false" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/typings/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="59" lean-forward="false" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/dev.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/low_level/GpuParticles.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="44" column="50" lean-forward="true" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
+        <state relative-caret-position="23">
+          <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shaders/particle.vert.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shaders/particle.frag.glsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        <state relative-caret-position="129">
+          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Renderer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="119" column="20" lean-forward="true" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+        <state relative-caret-position="257">
+          <caret line="195" column="34" lean-forward="false" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
           <folding>
             <element signature="e#123#180#0" expanded="true" />
             <element signature="e#269#306#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shaders/particle.vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

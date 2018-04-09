@@ -41,8 +41,8 @@ export default class GpuParticles {
 
         let star = new THREE.Vector3()
 
-        const axis1= (400+Math.random()*20);
-        const axis2= (axis1+20+Math.random()*100);
+        const axis1= (600+Math.random()*200);
+        const axis2= (axis1+200+Math.random()*400);
 
         let maja,
             mina;
@@ -50,12 +50,17 @@ export default class GpuParticles {
         axis1 > axis2 ? (maja=axis1,mina=axis2):
             axis1 == axis2 ? (maja=axis1+1,mina=axis2) : (maja=axis2,mina=axis1)
 
-        const armsAngle= ((Math.random()*2-1)>0?1:-1)*12+3
+        let armsAngle= ((Math.random()*2-1))
+        if (armsAngle > 0) armsAngle = 1 * 12 + 3;
+        if (armsAngle < 0) armsAngle = -1 * 12 +3;
 
         //core proportion in the (x,y) plane, between 0 and 1, proposed value range : between .1 and .8
-        const bulbSize = Math.random()*.6
+        let bulbSize = Math.random()*.6
+        if (bulbSize > 1) bulbSize = 1;
+        if (bulbSize < 0) bulbSize = 0;
 
-        const ellipticity = 2+Math.random()*.2
+
+        let ellipticity = .2+Math.random()*.2
 
         const dist= Math.random()
         const angle=(dist-bulbSize)*armsAngle

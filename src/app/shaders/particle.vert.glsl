@@ -16,18 +16,24 @@ float a;
 void main()	{
 
     vPosition = position;
-    mPosition = position * (1.+ 0. * 4.);
+
+    mPosition = position * (1.+ 2.5 * 4.);
+
     vec4 mvPosition=modelViewMatrix*vec4(mPosition,1.);
+
     a = length(position);
 
-    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-    gas = max(.0,sin(-a/20.));
+    float numOfRings = 20.;
+
+    gas = max(.0,sin(-a/numOfRings));
 
     if (galaxy) {
         //gl_PointSize = rand(vPosition.xy) * 4.0; // low processing
-        gl_PointSize = 3.0 * 2.0 * (1.+ gas * 2.); // v-high processing
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(mPosition, 1.0 );
+        gl_PointSize = 3.0 * 2.3 * (1.+ gas * 2.);// v-high processing
     } else {
-        gl_PointSize = rand(vPosition.xy) * 6.0;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0 );
+        gl_PointSize = rand(vPosition.xy) * 8.0;
     }
 
 

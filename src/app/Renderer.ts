@@ -95,14 +95,14 @@ export default class Renderer{
         })
 
         this.scene = new THREE.Scene()
-        this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 35000 )
+        this.camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 0.1, 105000 )
 
         this.renderer.setSize( window.innerWidth, window.innerHeight );
         this.renderer.setPixelRatio(2);
 
         document.body.appendChild( this.renderer.domElement )
 
-        const position = { x : 0, y: 0, z: 10000 }
+        const position = { x : 0, y: 0, z: 15000 }
 
         this.camera.position.copy(
             new THREE.Vector3(
@@ -112,9 +112,9 @@ export default class Renderer{
             )
         )
 
-       // this.zoomToPos(
-       //     new THREE.Vector3(0,  0, 25),
-       //     15)
+       this.zoomToPos(
+           new THREE.Vector3(0,  0, 25),
+           15)
 
         // this.scene.background = new THREE.CubeTextureLoader().load([
         //     posX,
@@ -131,7 +131,7 @@ export default class Renderer{
         this.gpuParticleSystem.particleMaterial.uniforms.galaxy.value = true;
         this.scene.add(this.particleField);
 
-        this.gpuParticleSystem2 =  new GpuParticles(50000, 50000, false, this.scene)
+        this.gpuParticleSystem2 =  new GpuParticles(50000, 100000, false, this.scene)
         const particleField2 = this.gpuParticleSystem2.particlePoints;
         this.scene.add(particleField2);
 
@@ -191,6 +191,12 @@ export default class Renderer{
     }
 
     update(): void {
+
+        if (this.camera.fov < 75) {
+            this.camera.fov += 0.1
+            this.camera.updateProjectionMatrix();
+        }
+
         this.refreshRenderer()
     }
 
