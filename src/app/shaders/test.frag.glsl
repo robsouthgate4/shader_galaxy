@@ -78,7 +78,7 @@ void main() {
 
     vec3 white = vec3(1.0, 1.0, 1.0) * (pct2 - 0.2);
 
-    alpha *= (pct - 0.01);    
+    alpha *= (pct - 0.01);
 
     gl_FragColor = vec4(color2 * color + white, alpha * 0.2);
 }

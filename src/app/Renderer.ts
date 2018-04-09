@@ -1,5 +1,7 @@
 import * as THREE from 'three'
 
+(<any>global).THREE = THREE;
+
 const OrbitControls = require('three-orbit-controls')(THREE)
 import ExampleMaterial from './materials/ExampleMaterial'
 import Props from './model/props'
@@ -34,6 +36,9 @@ export default class Renderer{
     nerbGroup: THREE.Object3D
     nerbMaterial: THREE.ShaderMaterial
     cubeMap: THREE.CubeTextureLoader
+    gpuParticleSystem: GpuParticles
+    gpuParticleSystem2: GpuParticles
+    particleField: THREE.Points
 
 
     constructor(canvas: HTMLCanvasElement, props: Props) {
@@ -68,8 +73,8 @@ export default class Renderer{
         }
     }
 
-    zoomToPos(target: THREE.Vector3): void{
-        TweenMax.to(this.camera.position, 10.0, {
+    zoomToPos(target: THREE.Vector3, duration = 12): void{
+        TweenMax.to(this.camera.position, duration, {
             x: target.x,
             y: target.y,
             z: target.z,
@@ -97,7 +102,7 @@ export default class Renderer{
 
         document.body.appendChild( this.renderer.domElement )
 
-        const position = { x : 0, y: 0, z: 1000 }
+        const position = { x : 0, y: 0, z: 10000 }
 
         this.camera.position.copy(
             new THREE.Vector3(
@@ -107,8 +112,9 @@ export default class Renderer{
             )
         )
 
-       this.zoomToPos(new THREE.Vector3(0,  0, 25))
-
+       // this.zoomToPos(
+       //     new THREE.Vector3(0,  0, 25),
+       //     15)
 
         // this.scene.background = new THREE.CubeTextureLoader().load([
         //     posX,
@@ -119,14 +125,30 @@ export default class Renderer{
         //     negZ
         // ]);
 
-        const gpuParticleSystem =  new GpuParticles(100000, 5000)
-        const particleField = gpuParticleSystem.particlePoints;
-        this.scene.add(particleField);
+        this.gpuParticleSystem =  new GpuParticles(50000, 5000, true, this.scene)
+        this.particleField = this.gpuParticleSystem.particlePoints;
+        this.particleField.rotation.x = THREE.Math.degToRad(-70);
+        this.gpuParticleSystem.particleMaterial.uniforms.galaxy.value = true;
+        this.scene.add(this.particleField);
 
-        // const gpuParticleSystem2 =  new GpuParticles(20000, 1000)
-        // const particleField2 = gpuParticleSystem2.particlePoints;
-        // this.scene.add(particleField2);
+        this.gpuParticleSystem2 =  new GpuParticles(50000, 50000, false, this.scene)
+        const particleField2 = this.gpuParticleSystem2.particlePoints;
+        this.scene.add(particleField2);
 
+        var textureFlare0 = THREE.ImageUtils.loadTexture('https://s3.amazonaws.com/jsfiddle1234/lensflare0.png');
+        var textureFlare3 = THREE.ImageUtils.loadTexture('https://images-na.ssl-images-amazon.com/images/I/41quvbpzlfS.png');
+        // THREE.ImageUtils.crossOrigin = '';
+        // var flareColor = new THREE.Color(0xffaacc);
+
+        // //
+        // lensFlare.add(textureFlare3, 60, 0.6, THREE.AdditiveBlending);
+        // lensFlare.add(textureFlare3, 70, 0.7, THREE.AdditiveBlending);
+        // lensFlare.add(textureFlare3, 120, 0.9, THREE.AdditiveBlending);
+        // lensFlare.add(textureFlare3, 70, 1.0, THREE.AdditiveBlending);
+        //
+        // lensFlare.position.copy(this.nerbGroup.position);
+        //
+        // this.scene.add(lensFlare)
 
         /*
            Add scene lights
@@ -144,7 +166,7 @@ export default class Renderer{
         /* Create Nebula  */
 
         this.nerbMaterial = ExampleMaterial.createMaterial();
-        this.nerbGroup = Geometries.CreateNebulaGeometry(10, 90, 60);
+        this.nerbGroup = Geometries.CreateNebulaGeometry(12, 90, 60);
         this.nerbGroup.scale.set(0.5, 0.5, 0.5)
 
         this.nerbGroup.traverse((item) => {
@@ -199,10 +221,16 @@ export default class Renderer{
             time += 1;
 
             if (this.nerbMaterial) {
+
                 this.nerbMaterial.uniforms.time.value = time
                 this.nerbMaterial.uniforms.resolution.value.x = this.renderer.domElement.width
                 this.nerbMaterial.uniforms.resolution.value.y = this.renderer.domElement.height
+
+                this.gpuParticleSystem.particleMaterial.uniforms.time.value =  time
+                this.gpuParticleSystem2.particleMaterial.uniforms.time.value =  time
+
             }
+
 
             if (this.props.animateLights) {
                 // Animate scene lights
