@@ -22,8 +22,6 @@ export default class Geometries {
             mesh.position.y = 0;
             mesh.position.z = 0;
 
-            console.log(getRandomInt(0, 360))
-
             mesh.rotation.y = THREE.Math.degToRad(getRandomInt(0, 360));
             mesh.rotation.x = THREE.Math.degToRad(getRandomInt(0, 360));
             mesh.rotation.z = THREE.Math.degToRad(getRandomInt(0, 360));

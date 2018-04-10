@@ -27,15 +27,11 @@ export default class Renderer{
     camera: THREE.PerspectiveCamera
     renderer: THREE.WebGLRenderer
     scene: THREE.Scene
-    sphereGeometry: THREE.SphereGeometry
-    nebulaGeomerty: THREE.Geometry
     light: THREE.Light
     light2: THREE.Light
-    sphereMaterial: THREE.Material
     textGeometry: THREE.TextGeometry;
-    nerbGroup: THREE.Object3D
-    nerbMaterial: THREE.ShaderMaterial
-    cubeMap: THREE.CubeTextureLoader
+    nebGroup: THREE.Object3D
+    nebMaterial: THREE.ShaderMaterial
     gpuParticleSystem: GpuParticles
     gpuParticleSystem2: GpuParticles
     particleField: THREE.Points
@@ -102,7 +98,7 @@ export default class Renderer{
 
         document.body.appendChild( this.renderer.domElement )
 
-        const position = { x : 0, y: 0, z: 15000 }
+        const position = { x : 0, y: 100, z: 50000 }
 
         this.camera.position.copy(
             new THREE.Vector3(
@@ -112,31 +108,26 @@ export default class Renderer{
             )
         )
 
-       this.zoomToPos(
-           new THREE.Vector3(0,  0, 25),
-           15)
+       // this.zoomToPos(
+       //     new THREE.Vector3(0,  0, 30),
+       //     15)
 
-        // this.scene.background = new THREE.CubeTextureLoader().load([
-        //     posX,
-        //     negX,
-        //     posY,
-        //     negY,
-        //     posZ,
-        //     negZ
-        // ]);
 
-        this.gpuParticleSystem =  new GpuParticles(50000, 5000, true, this.scene)
+        this.gpuParticleSystem =  new GpuParticles(30000, 5000, true, this.scene)
         this.particleField = this.gpuParticleSystem.particlePoints;
-        this.particleField.rotation.x = THREE.Math.degToRad(-70);
+        this.particleField.rotation.x = THREE.Math.degToRad(-60);
+        this.particleField.rotation.z = THREE.Math.degToRad(-30);
         this.gpuParticleSystem.particleMaterial.uniforms.galaxy.value = true;
         this.scene.add(this.particleField);
 
-        this.gpuParticleSystem2 =  new GpuParticles(50000, 100000, false, this.scene)
+        this.gpuParticleSystem2 =  new GpuParticles(30000, 100000, false, this.scene)
         const particleField2 = this.gpuParticleSystem2.particlePoints;
         this.scene.add(particleField2);
 
         var textureFlare0 = THREE.ImageUtils.loadTexture('https://s3.amazonaws.com/jsfiddle1234/lensflare0.png');
         var textureFlare3 = THREE.ImageUtils.loadTexture('https://images-na.ssl-images-amazon.com/images/I/41quvbpzlfS.png');
+
+
         // THREE.ImageUtils.crossOrigin = '';
         // var flareColor = new THREE.Color(0xffaacc);
 
@@ -165,18 +156,18 @@ export default class Renderer{
 
         /* Create Nebula  */
 
-        this.nerbMaterial = ExampleMaterial.createMaterial();
-        this.nerbGroup = Geometries.CreateNebulaGeometry(12, 90, 60);
-        this.nerbGroup.scale.set(0.5, 0.5, 0.5)
+        this.nebMaterial = ExampleMaterial.createMaterial();
+        this.nebGroup = Geometries.CreateNebulaGeometry(12, 90, 60);
+        this.nebGroup.scale.set(0.5, 0.5, 0.5)
 
-        this.nerbGroup.traverse((item) => {
+        this.nebGroup.traverse((item) => {
             if (item instanceof THREE.Mesh) {
-                item.material = this.nerbMaterial
+                item.material = this.nebMaterial
             }
         })
 
         
-        this.scene.add(this.nerbGroup);
+        this.scene.add(this.nebGroup);
         
 
 
@@ -226,11 +217,11 @@ export default class Renderer{
 
             time += 1;
 
-            if (this.nerbMaterial) {
+            if (this.nebMaterial) {
 
-                this.nerbMaterial.uniforms.time.value = time
-                this.nerbMaterial.uniforms.resolution.value.x = this.renderer.domElement.width
-                this.nerbMaterial.uniforms.resolution.value.y = this.renderer.domElement.height
+                this.nebMaterial.uniforms.time.value = time
+                this.nebMaterial.uniforms.resolution.value.x = this.renderer.domElement.width
+                this.nebMaterial.uniforms.resolution.value.y = this.renderer.domElement.height
 
                 this.gpuParticleSystem.particleMaterial.uniforms.time.value =  time
                 this.gpuParticleSystem2.particleMaterial.uniforms.time.value =  time

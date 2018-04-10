@@ -1,5 +1,3 @@
-
-
 uniform float time;
 uniform bool galaxy;
 
