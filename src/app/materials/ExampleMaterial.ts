@@ -4,8 +4,8 @@ import * as THREE from 'three'
 const hmr = require('../../lib/three-hmr')
 const cache = hmr.cache(__filename)
 
-const fragmentShader = require('../shaders/test.frag.glsl')
-const vertexShader = require('../shaders/test.vert.glsl')
+const fragmentShader = require('../shaders/nebula.frag.glsl')
+const vertexShader = require('../shaders/nebula.vert.glsl')
 
 if (module.hot) {
     console.log('hello')

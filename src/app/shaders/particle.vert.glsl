@@ -20,13 +20,12 @@ void main()	{
     vec4 mvPosition=modelViewMatrix*vec4(mPosition,1.);
 
     a = length(position);
-
     float numOfRings = 35.;
 
     gas = max(.0,sin(-a/numOfRings));
 
     if (galaxy) {
-        //gl_PointSize = rand(vPosition.xy) * 4.0; // low processing
+        //gl_PointSize = max(4.0, rand(vPosition.xy)) * 4.0; // low processing
         gl_Position = projectionMatrix * modelViewMatrix * vec4(mPosition, 1.0 );
         gl_PointSize = 3.0 * 2.8 * (1.+ gas * 2.);// v-high processing
     } else {

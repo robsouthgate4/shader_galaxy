@@ -92,13 +92,12 @@ export default class GpuParticles {
         axis1 > axis2 ? (maja=axis1,mina=axis2):
             axis1 == axis2 ? (maja=axis1+1,mina=axis2) : (maja=axis2,mina=axis1)
 
-
-        let armsAngle= ( (Math.random() * 2 -1)) * 2 + 3
+        let armsAngle= ((Math.random()*2-1)) * 12 + 3
 
         //core proportion in the (x,y) plane, between 0 and 1, proposed value range : between .1 and .8
-        let bulbSize = .02
+        let bulbSize = .2
 
-        let ellipticity = .00005
+        let ellipticity = .05
 
         this.starsGeometry = new THREE.Geometry();
 

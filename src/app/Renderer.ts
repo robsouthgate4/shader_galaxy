@@ -10,6 +10,7 @@ import {TweenMax, Power4} from "gsap"
 import Geometries from "./Geometries"
 import MaterialsLib from "./materials/MaterialsLib"
 import GpuParticles from './low_level/GpuParticles'
+import RenderLoop from './utils/RenderLoop'
 
 const posX = require("../../static/images/posx.png")
 const posY = require("../../static/images/posy.png")
@@ -124,27 +125,9 @@ export default class Renderer{
         const particleField2 = this.gpuParticleSystem2.particlePoints;
         this.scene.add(particleField2);
 
-        var textureFlare0 = THREE.ImageUtils.loadTexture('https://s3.amazonaws.com/jsfiddle1234/lensflare0.png');
-        var textureFlare3 = THREE.ImageUtils.loadTexture('https://images-na.ssl-images-amazon.com/images/I/41quvbpzlfS.png');
-
-
-        // THREE.ImageUtils.crossOrigin = '';
-        // var flareColor = new THREE.Color(0xffaacc);
-
-        // //
-        // lensFlare.add(textureFlare3, 60, 0.6, THREE.AdditiveBlending);
-        // lensFlare.add(textureFlare3, 70, 0.7, THREE.AdditiveBlending);
-        // lensFlare.add(textureFlare3, 120, 0.9, THREE.AdditiveBlending);
-        // lensFlare.add(textureFlare3, 70, 1.0, THREE.AdditiveBlending);
-        //
-        // lensFlare.position.copy(this.nerbGroup.position);
-        //
-        // this.scene.add(lensFlare)
-
         /*
            Add scene lights
         */
-
         this.light = new THREE.PointLight( new THREE.Color('#ffffff'), 1, 100);
         this.light.position.set( 0, 0, 0 );+
         this.scene.add( this.light );
@@ -168,9 +151,6 @@ export default class Renderer{
 
         
         this.scene.add(this.nebGroup);
-        
-
-
         this.draw()
 
         if (this.props.orbitControls) {
@@ -213,8 +193,7 @@ export default class Renderer{
 
         let time = 0
 
-        const animate = () => {
-
+        const rloop = new RenderLoop((dt) =>{
             time += 1;
 
             if (this.nebMaterial) {
@@ -227,18 +206,14 @@ export default class Renderer{
                 this.gpuParticleSystem2.particleMaterial.uniforms.time.value =  time
 
             }
-
-
             if (this.props.animateLights) {
                 // Animate scene lights
                 this.light.position.x = -Math.sin(time/100) * 10.9
                 this.light2.position.x = Math.sin(time/100) * 10.9
             }
 
-
-            requestAnimationFrame(animate)
             this.renderer.render(this.scene, this.camera)
-        }
-        animate()
+
+        },10).start();
     }
 }
