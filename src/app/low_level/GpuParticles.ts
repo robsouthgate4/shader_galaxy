@@ -122,6 +122,7 @@ export default class GpuParticles {
             THREE.UniformsLib[ "fog" ],
             {
                 time: {type: 'f', value: 0.0},
+                angle: { type: 'f', value: 0.0},
                 galaxy: {type: 'b', value: false}
             }]),
             vertexShader: gpuVertShader,

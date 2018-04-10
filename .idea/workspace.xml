@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="340bd760-f25d-42a7-a535-93de137a69e5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/app/utils/RenderLoop.ts" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/app/Renderer.ts" afterPath="$PROJECT_DIR$/src/app/Renderer.ts" />
       <change beforePath="$PROJECT_DIR$/src/app/low_level/GpuParticles.ts" afterPath="$PROJECT_DIR$/src/app/low_level/GpuParticles.ts" />
-      <change beforePath="$PROJECT_DIR$/src/app/materials/ExampleMaterial.ts" afterPath="$PROJECT_DIR$/src/app/materials/ExampleMaterial.ts" />
-      <change beforePath="$PROJECT_DIR$/src/app/objects/egg.obj" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/app/objects/egg_hi.obj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/app/shaders/nebula.vert.glsl" afterPath="$PROJECT_DIR$/src/app/shaders/nebula.vert.glsl" />
       <change beforePath="$PROJECT_DIR$/src/app/shaders/particle.vert.glsl" afterPath="$PROJECT_DIR$/src/app/shaders/particle.vert.glsl" />
-      <change beforePath="$PROJECT_DIR$/src/app/shaders/test.frag.glsl" afterPath="$PROJECT_DIR$/src/app/shaders/nebula.frag.glsl" />
-      <change beforePath="$PROJECT_DIR$/src/app/shaders/test.vert.glsl" afterPath="$PROJECT_DIR$/src/app/shaders/nebula.vert.glsl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,18 +20,58 @@
       <file leaf-file-name="GpuParticles.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/low_level/GpuParticles.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3082">
-              <caret line="135" column="45" lean-forward="true" selection-start-line="135" selection-start-column="45" selection-end-line="135" selection-end-column="45" />
+            <state relative-caret-position="46">
+              <caret line="3" column="52" lean-forward="false" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExampleMaterial.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="particle.vert.glsl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/shaders/particle.vert.glsl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="713">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExampleMaterial.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/materials/ExampleMaterial.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="332">
+              <caret line="35" column="53" lean-forward="true" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nebula.vert.glsl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shaders/nebula.vert.glsl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="27" column="2" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/App.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="741">
+              <caret line="110" column="29" lean-forward="true" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -75,8 +110,8 @@
       <file leaf-file-name="Renderer.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/Renderer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="111" column="7" lean-forward="false" selection-start-line="111" selection-start-column="10" selection-end-line="113" selection-end-column="17" />
+            <state relative-caret-position="453">
+              <caret line="211" column="0" lean-forward="true" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
               <folding>
                 <element signature="e#123#180#0" expanded="true" />
                 <element signature="e#269#306#0" expanded="true" />
@@ -136,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/modifiers/TessellateModifier.ts" />
         <option value="$PROJECT_DIR$/src/app/modifiers/ExplodeModifier.ts" />
         <option value="$PROJECT_DIR$/src/app/model/Props.ts" />
         <option value="$PROJECT_DIR$/webpack/dev.config.ts" />
@@ -169,7 +203,6 @@
         <option value="$PROJECT_DIR$/src/app/utils/Helpers.ts" />
         <option value="$PROJECT_DIR$/src/lib/three-hmr.ts" />
         <option value="$PROJECT_DIR$/src/app/index.ts" />
-        <option value="$PROJECT_DIR$/src/app/materials/ExampleMaterial.ts" />
         <option value="$PROJECT_DIR$/src/style/app.scss" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/shaders/test.vert.glsl" />
@@ -184,9 +217,11 @@
         <option value="$PROJECT_DIR$/src/app/shaders/particle.frag.glsl" />
         <option value="$PROJECT_DIR$/src/app/Geometries.ts" />
         <option value="$PROJECT_DIR$/src/app/utils/RenderLoop.ts" />
+        <option value="$PROJECT_DIR$/src/app/shaders/nebula.vert.glsl" />
+        <option value="$PROJECT_DIR$/src/app/materials/ExampleMaterial.ts" />
         <option value="$PROJECT_DIR$/src/app/low_level/GpuParticles.ts" />
-        <option value="$PROJECT_DIR$/src/app/shaders/particle.vert.glsl" />
         <option value="$PROJECT_DIR$/src/app/Renderer.ts" />
+        <option value="$PROJECT_DIR$/src/app/shaders/particle.vert.glsl" />
       </list>
     </option>
   </component>
@@ -244,12 +279,7 @@
               <item name="shader_galaxy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="shaders" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="shader_galaxy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shader_galaxy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="typings" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="low_level" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -319,12 +349,12 @@
       <workItem from="1523280862093" duration="330000" />
       <workItem from="1523281608057" duration="11314000" />
       <workItem from="1523348041178" duration="3199000" />
-      <workItem from="1523367794273" duration="3519000" />
+      <workItem from="1523367794273" duration="6082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122022000" />
+    <option name="totallyTimeSpent" value="124585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1966" height="1028" extended-state="0" />
@@ -449,20 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/App.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="91" column="5" lean-forward="false" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/images/negx.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -512,13 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="18347" column="4" lean-forward="false" selection-start-line="18347" selection-start-column="4" selection-end-line="18347" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -657,25 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Renderer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="111" column="7" lean-forward="false" selection-start-line="111" selection-start-column="10" selection-end-line="113" selection-end-column="17" />
-          <folding>
-            <element signature="e#123#180#0" expanded="true" />
-            <element signature="e#269#306#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/low_level/GpuParticles.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3082">
-          <caret line="135" column="45" lean-forward="true" selection-start-line="135" selection-start-column="45" selection-end-line="135" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/materials/MaterialsLib.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-736">
@@ -700,22 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shaders/nebula.vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shaders/particle.vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/modifiers/TessellateModifier.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -732,10 +706,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/App.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="110" column="29" lean-forward="true" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shaders/nebula.vert.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="2" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/materials/ExampleMaterial.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="332">
+          <caret line="35" column="53" lean-forward="true" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/low_level/GpuParticles.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="3" column="52" lean-forward="false" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Renderer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="211" column="0" lean-forward="true" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+          <folding>
+            <element signature="e#123#180#0" expanded="true" />
+            <element signature="e#269#306#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shaders/particle.vert.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>

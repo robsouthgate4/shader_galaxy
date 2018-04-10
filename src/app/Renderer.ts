@@ -149,7 +149,7 @@ export default class Renderer{
             }
         })
 
-        
+
         this.scene.add(this.nebGroup);
         this.draw()
 
@@ -189,21 +189,29 @@ export default class Renderer{
         this.renderer.render(this.scene, this.camera)
     }
 
+    onRender(): void {
+
+    }
+
     draw(): void {
 
         let time = 0
+        let angle = 0;
 
         const rloop = new RenderLoop((dt) =>{
             time += 1;
-
+            angle += THREE.Math.degToRad(90);
             if (this.nebMaterial) {
 
                 this.nebMaterial.uniforms.time.value = time
                 this.nebMaterial.uniforms.resolution.value.x = this.renderer.domElement.width
                 this.nebMaterial.uniforms.resolution.value.y = this.renderer.domElement.height
 
+                this.gpuParticleSystem.particleMaterial.uniforms.angle.value = angle
                 this.gpuParticleSystem.particleMaterial.uniforms.time.value =  time
+
                 this.gpuParticleSystem2.particleMaterial.uniforms.time.value =  time
+                this.gpuParticleSystem2.particleMaterial.uniforms.angle.value = angle
 
             }
             if (this.props.animateLights) {

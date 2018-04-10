@@ -1,6 +1,7 @@
 
 uniform float time;
 uniform bool galaxy;
+uniform float angle;
 
 varying vec3 vPosition;
 varying vec3 mPosition;
@@ -26,7 +27,9 @@ void main()	{
 
     if (galaxy) {
         //gl_PointSize = max(4.0, rand(vPosition.xy)) * 4.0; // low processing
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(mPosition, 1.0 );
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(
+            mPosition,
+         1.0 );
         gl_PointSize = 3.0 * 2.8 * (1.+ gas * 2.);// v-high processing
     } else {
         gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0 );
