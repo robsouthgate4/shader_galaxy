@@ -61,7 +61,7 @@ export default class GpuParticles {
         let theta = Math.random() * Math.PI * 2
 
         //2. deduce radius from theta in polar coordinates, from the CENTER of an ellipse, plus vartiations
-        const radius=Math.sqrt(b*b/(1-e*e*Math.pow(Math.cos(theta),2)))*(1+Math.random()*.1)
+        const radius = Math.sqrt(b*b/(1-e*e*Math.pow(Math.cos(theta),2)))*(1+Math.random()*.1)
 
         //3. then shift theta with the angle offset to get arms, outside the bulb
         if(dist>bulbSize)theta += (angle * 2)
@@ -93,10 +93,8 @@ export default class GpuParticles {
             axis1 == axis2 ? (maja=axis1+1,mina=axis2) : (maja=axis2,mina=axis1)
 
         let armsAngle= ((Math.random()*2-1)) * 12 + 3
-
         //core proportion in the (x,y) plane, between 0 and 1, proposed value range : between .1 and .8
         let bulbSize = .2
-
         let ellipticity = .05
 
         this.starsGeometry = new THREE.Geometry();
