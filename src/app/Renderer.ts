@@ -1,11 +1,11 @@
 import * as THREE from 'three'
 
-(<any>global).THREE = THREE;
+import 'three-examples/controls/OrbitControls'
+import 'three-examples/objects/Lensflare'
+import 'three-examples/loaders/ObjLoader'
 
-const OrbitControls = require('three-orbit-controls')(THREE)
 import ExampleMaterial from './materials/ExampleMaterial'
 import Props from './model/props'
-const OBJLoader = require('three-obj-loader')(THREE);
 import {TweenMax, Power4} from "gsap"
 import Geometries from "./Geometries"
 import MaterialsLib from "./materials/MaterialsLib"
@@ -15,10 +15,10 @@ import RenderLoop from './utils/RenderLoop'
 const posX = require("../../static/images/posx.png")
 const posY = require("../../static/images/posy.png")
 const posZ = require("../../static/images/posz.png")
-
 const negX = require("../../static/images/negx.png")
 const negY = require("../../static/images/negy.png")
 const negZ = require("../../static/images/negz.png")
+
 
 export default class Renderer{
 
@@ -36,7 +36,7 @@ export default class Renderer{
     gpuParticleSystem: GpuParticles
     gpuParticleSystem2: GpuParticles
     particleField: THREE.Points
-
+    lensFlare: THREE.Lensflare
 
     constructor(canvas: HTMLCanvasElement, props: Props) {
         this.canvas = canvas
@@ -48,7 +48,7 @@ export default class Renderer{
 
     loadObject(objToLoad: string): Promise<object> {
         return new Promise((resolve, reject) => {
-            const loader = new OBJLoader();
+            const loader = new THREE.OBJLoader();
             loader.load(objToLoad,
                 (obj: object) => {
                     resolve(obj)
@@ -109,9 +109,9 @@ export default class Renderer{
             )
         )
 
-       // this.zoomToPos(
-       //     new THREE.Vector3(0,  0, 30),
-       //     15)
+       this.zoomToPos(
+           new THREE.Vector3(0,  0, 30),
+           15)
 
 
         this.gpuParticleSystem =  new GpuParticles(30000, 5000, true, this.scene)
@@ -136,9 +136,28 @@ export default class Renderer{
         this.light2.position.set( -20, 0, 0 );
         this.scene.add( this.light2 );
 
+        /*
+            lens flares
+         */
 
-        /* Create Nebula  */
+        const textureLoader = new THREE.TextureLoader();
+        const img1 = require('../../static/images/lensflare0.png')
+        const img2 = require('../../static/images/lensflare3.png')
+        const textureFlare0 = textureLoader.load( img1);
+        const textureFlare3 = textureLoader.load( img2);
+        this.lensFlare = new THREE.Lensflare(textureFlare0, 350, 0.0, THREE.AdditiveBlending);
 
+        this.lensFlare.addElement( new THREE.LensflareElement( textureFlare0, 700, 0, this.light.color ) );
+        this.lensFlare.addElement( new THREE.LensflareElement( textureFlare3, 60, 0.6 ) );
+        this.lensFlare.addElement( new THREE.LensflareElement( textureFlare3, 70, 0.7 ) );
+        this.lensFlare.addElement( new THREE.LensflareElement( textureFlare3, 120, 0.9 ) );
+        this.lensFlare.addElement( new THREE.LensflareElement( textureFlare3, 70, 1 ) );
+
+        this.light.add(this.lensFlare);
+
+        /*
+            Create Nebula
+        */
         this.nebMaterial = ExampleMaterial.createMaterial();
         this.nebGroup = Geometries.CreateNebulaGeometry(12, 90, 60);
         this.nebGroup.scale.set(0.5, 0.5, 0.5)
@@ -149,12 +168,11 @@ export default class Renderer{
             }
         })
 
-
         this.scene.add(this.nebGroup);
         this.draw()
 
         if (this.props.orbitControls) {
-            this.controls = new OrbitControls( this.camera )
+            this.controls = new THREE.OrbitControls( this.camera )
         } else {
             this.controls = null;
         }
@@ -189,10 +207,6 @@ export default class Renderer{
         this.renderer.render(this.scene, this.camera)
     }
 
-    onRender(): void {
-
-    }
-
     draw(): void {
 
         let time = 0
@@ -201,6 +215,13 @@ export default class Renderer{
         const rloop = new RenderLoop((dt) =>{
             time += 1;
             angle += THREE.Math.degToRad(90);
+
+            if (this.camera.position.z < 500) {
+                this.light.remove(this.lensFlare)
+            } else {
+                this.light.add(this.lensFlare)
+            }
+
             if (this.nebMaterial) {
 
                 this.nebMaterial.uniforms.time.value = time

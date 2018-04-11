@@ -17,7 +17,8 @@ module.exports = merge(baseConfig, {
             contentBase: '../src',
             port: 9000,
             open: true,
-            host: '0.0.0.0'
+            host: '0.0.0.0',
+            stats: "errors-only"
         },
         plugins: [
             new webpack.HotModuleReplacementPlugin(),

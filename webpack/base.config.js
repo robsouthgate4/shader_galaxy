@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+const path = require('path')
 
 module.exports = {
         context: __dirname,
@@ -27,6 +28,9 @@ module.exports = {
                     }, {
                         loader: "sass-loader" // compiles Sass to CSS
                     }]
+                },{
+                    test: /three\/examples\/js/,
+                    use: 'imports-loader?THREE=three'
                 },
                 {
                     test: /\.(ogg|mp3|jpe?g|png|gif|obj|svg|mpe?g|woff|ttf|eot|otf)$/i,
@@ -56,6 +60,9 @@ module.exports = {
             ]
         },
         resolve: {
+            alias: {
+                'three-examples': path.join(__dirname, '../node_modules/three/examples/js')
+            },
             extensions: ['.tsx', '.ts', '.js']
         }
 }
